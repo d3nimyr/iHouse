@@ -19,18 +19,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginbutton: UIButton!
     
     var attrs = [
-        NSFontAttributeName : UIFont.systemFontOfSize(14.0),
+        NSFontAttributeName : UIFont(name:"Circe-Bold",size: 17)! ,
         NSForegroundColorAttributeName : UIColor(red: 45/255, green: 182/255, blue: 187/255, alpha: 1),
         NSUnderlineStyleAttributeName : 1  ]
     
     var attributedString = NSMutableAttributedString(string:"")
+    var attributedString1 = NSMutableAttributedString(string:"")
 
     
     override func viewDidLoad() {
         let buttonTitleStr = NSMutableAttributedString(string:"Зарегистрироваться", attributes:attrs)
+        
         attributedString.appendAttributedString(buttonTitleStr)
         registration.setAttributedTitle(attributedString, forState: .Normal)
         
+        let buttonTitleStr1 = NSMutableAttributedString(string:"Забыли имя пользователя или пароль?", attributes:attrs)
+        attributedString1.appendAttributedString(buttonTitleStr1)
+        forgotpassword.setAttributedTitle(attributedString1, forState: .Normal)
         //Making a padding object of view for first textField
         let paddingForFirst = UIView(frame: CGRectMake(0, 0, 25, self.logintext.frame.size.height))
         //Adding the padding to the second textField
